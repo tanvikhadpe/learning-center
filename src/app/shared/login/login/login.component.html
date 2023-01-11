@@ -1,1 +1,66 @@
-<p>login works!</p>
+<!-- ============================================================== -->
+<!-- Basic Card Grid-->
+<!-- ============================================================== -->
+<mat-card>
+    <mat-card-content>
+        <h4 class="mb-32"><img src="assets/images/favicon.png" alt="">
+            <span class="ms-16 fw-medium fs-26">Freebie</span>
+        </h4>
+
+        <mat-grid-list cols="2" rowHeight="1:1">
+            <mat-grid-tile class="login-bg">
+                <img src="assets/images/login-bg.svg" alt=""style="background-repeat: no-repeat;background-size: auto;">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="row">
+                    <div class="col-12"> <h2>Welcome to Freebie</h2> </div>
+                    <div class="col-12">
+                        <p class="text-start pb-5 fs-16">
+                            New to Freebie? <button mat-button color="primary"> Create an account </button>
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <mat-form-field class="w-100 fs-16" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" placeholder="Enter your email" formControlName="email" 
+                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                 </div>
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100 fs-16" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput type="password" placeholder="Enter your password"formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                 </div>
+                            </mat-form-field>
+
+                            <div class="col-12" class="text-nowrap">
+                                <mat-checkbox color="primary" [checked]="checked" style="width: 50%;">
+                                    Remember Me!
+                                </mat-checkbox>
+                                <a mat-button color="warn" style="width: 50%;" class="text-end">
+                                    Forgot Password?</a>
+                            </div>
+                            <div class="col-12">
+                                <button mat-button class="btn btn-success w-100 mt-12" type="submit">Submit</button>
+                            </div>
+                            <p class="text-center light pt-12 fs-16">or sign in with</p>
+                        </form>
+                    </div>
+                    <div class="col-12" class="text-nowrap">
+                        <a mat-raised-button class="me-8 mb-8 btn-danger" style="width: 50%;" routerLink=".">Google</a>
+                        <a mat-raised-button class="me-8 mb-8 btn-info" style="width: 50%;" routerLink=".">Facebook</a>
+                    </div>
+                </div>
+
+
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

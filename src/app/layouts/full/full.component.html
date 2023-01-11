@@ -7,7 +7,7 @@
     <div class="p-16">
       <div class="mb-16">
         <a href="javascript:void(0)" class="d-flex align-items-center">
-          <img src="assets/images/favicon.png" alt=""> <span class="ms-16 fw-medium fs-26">Flexy</span>
+          <img src="assets/images/favicon.png" alt=""> <span class="ms-16 fw-medium fs-26">Freebie</span>
         </a>
 
       </div>
@@ -17,8 +17,8 @@
           <li class="list-group mb-8" *ngFor="let sidenav of sidebarMenu">
             <a matRipple [matRippleColor]="'#f7f8f443'" routerLink="{{ sidenav.link }}"
               class="sidebar-menu fs-16 w-100 d-flex align-items-center" [routerLinkActive]="routerActive">
-              <i-feather name="{{ sidenav.icon }}" class="feather-base me-16"></i-feather> <span
-                class="ps-4">{{ sidenav.menu }}</span>
+              <i-feather name="{{ sidenav.icon }}" class="feather-base me-16"></i-feather> <span class="ps-4">{{
+                sidenav.menu }}</span>
             </a>
           </li>
         </ul>
@@ -58,10 +58,19 @@
         <i-feather name="search" class="mt-n3 text-light-muted feather-base text-dark"></i-feather>
       </button>
       <div class="ms-auto">
+        <button mat-button >
+          <mat-icon aria-hidden="false" color="basic" matBadge="8" matBadgePosition="after" matBadgeColor="warn" aria-label="Notifications" fontIcon="chat icon"></mat-icon>
+        </button>
+        <button mat-button >
+          <mat-icon aria-hidden="false" color="basic" matBadge="8" matBadgePosition="after" matBadgeColor="primary" aria-label="Notifications" fontIcon="email icon"></mat-icon>
+        </button>
+        <button mat-button >
+          <mat-icon aria-hidden="false" color="basic" matBadge="8" matBadgePosition="after" matBadgeColor="accent" aria-label="Notifications" fontIcon="help icon"></mat-icon>
+        </button>
         <button mat-button class="fs-16 pt-4 pb-4 ps-8 pe-8 text-light-muted" [matMenuTriggerFor]="menu">
           <img src="assets/images/user2.webp" class="rounded-circle" alt="">
           <span class="fw-light ms-8 text-secondary">Hi,</span>
-          <span class="fw-bold ms-8">Julia</span>
+          <span class="fw-bold ms-8">Tanvi</span>
           <i-feather name="chevron-down" class="feather-base mt-n2"></i-feather>
         </button>
         <mat-menu #menu="matMenu" class="profile-dropdown">
@@ -89,9 +98,8 @@
       </div>
     </div>
 
-    <p class="text-center pb-24 fs-16">© 2022 All rights reserved by <a
-        href="https://www.wrappixel.com/templates/category/free-angular-templates/" target="_blank"
-        class="text-indigo">Wrappixel.com</a></p>
+    <p class="text-center pb-24 fs-16">© 2023 All rights reserved by <a href="https://www.linkedin.com/in/tanvi-khadpe/"
+        target="_blank" class="text-indigo">Tanvi Khadpe</a></p>
 
   </mat-sidenav-content>
 

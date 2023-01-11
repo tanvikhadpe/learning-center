@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { FormsModule } from '@angular/forms'
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,6 +45,15 @@ import { ExpensesComponent } from './staff/expenses/expenses.component';
 import { SalaryComponent } from './staff/salary/salary.component';
 import { SalarycodeComponent } from './staff/salarycode/salarycode.component';
 import { VoucherComponent } from './staff/voucher/voucher.component';
+
+// Firebase services + environment module
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -91,7 +100,15 @@ import { VoucherComponent } from './staff/voucher/voucher.component';
     DemoFlexyModule,
     DashboardModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
